@@ -1,22 +1,22 @@
-const Sequelize = require('sequilize');
-const db = require('../config/databse')
+const {DataTypes} = require('sequelize');
+const db = require('../config/database.js')
 
 
 const Gig = db.define('gig',{
     title:{
-        type:Sequelize.String
+        type:DataTypes.STRING
     },
     technologies:{
-        type:Sequelize.String
+        type:DataTypes.STRING
     },
     description:{
-        type:Sequelize.String
+        type:DataTypes.STRING
     },
     budget:{
-        type:Sequelize.String
+        type:DataTypes.STRING
     },
     contact_email:{
-        type:Sequelize.String
+        type:DataTypes.STRING
     },
 })
 module.exports = Gig

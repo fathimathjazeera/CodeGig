@@ -3,13 +3,12 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const path = require('path')
-const sequelize = require('./config/database')
-
+const sequelize = require('./config/database.js')
+const gigRoutes= require('./routes/gigs.js')
 const app=express()
 
-app.get('/',(req,res)=>{
-
-})
+app.use(express.json())
+app.use('/gigs',gigRoutes)
 
 // test connection
 sequelize.authenticate().then(()=> console.log('Database connected')).catch((err)=> console.log('Error: ',err))
